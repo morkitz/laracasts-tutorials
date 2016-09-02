@@ -1,0 +1,95 @@
+Instead of <?php echo "something" ?>, one can use <?= "Something" ?>
+
+This is how you append a new element to the array variable:
+$array[] = "New element";
+
+Remove element from the array variable:
+unset($array[1]);
+unset($array['key']);
+
+Echoing variables for debugging purposes:
+var_dump($var);
+
++ echoing with preserving formatting:
+	echo '<pre>';
+		<?php var_dump($var); ?>
+	echo '</pre>';
+
++ die(var_dump($var));
+
+The <pre> tag defines preformatted text.
+Text in a <pre> element is displayed in a fixed-width font (usually Courier), and it preserves both spaces and line breaks.
+
+Capitalize first letter of the word (or each word in a sentence):
+ucwords("firstletter"); // Firstletter
+ucwords("hello world"); // Hello World
+
+Escape html tags:
+htmlspecialchars()
+
+The <span> Element:
+The <span> element is often used as a container for some text.
+The <span> element has no required attributes, but both style and class are common.
+When used together with CSS, the <span> element can be used to style parts of the text:
+<h1>My <span style="color:red">Important</span> Heading</h1>
+
+Create database:
+$ create database <db-name>;
+
+Select database:
+$ use <db-name>;
+
+Show tables:
+$ show tables;
+
+More info on a table:
+$ describe <table-name>
+
+Auto increment constraint:
+AUTO_INCREMENT (mysql)
+
+Class Constructor in php:
+public function __construct() {}
+
+Accessing class var:
+$class->var
+
+In php you have to use $this to dereference member variable of a class inside of a class:
+$this->var
+
+Database in php:
+$pdo = new PDO('mysql:host=127.0.0.1;dbname=mytodo', 'root', 'root');
+$statement = $pdo->prepare('select * from todos');
+$statement->execute();
+var_dump($statement->fetchAll());
+$results = $statement->execute(PDO::FETCH_OBJ); // fetch as array of objects
+$results = $statement->execute(PDO::FETCH_CLASS); // into custom defined class
+
+new PDO('mysql:host=127.0.0.1;dbname=mytodo', 'root', 'root', $options);
+$options ==> e.g. [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION] --> Throw exceptions on errors...
+
+Map elements of an array to a new array using a custom function:
+$array2 = array_map(function ($element) {
+	return 'foo';
+}, $array1);
+
+Specific server information (including the URI of the requested addr):
+$_SERVER
+$_SERVER['REQUEST_URI'];
+
+
+Extensions in chrome:
+Extension "var_masterpiece"
+JSON Formatter
+
+
+"array_" PHP functions:
+$filtered_array = array_filter($posts, function($post) { return true|false; })
+$modified_array = array_map($function($post) {
+	return 'modified';
+}, $posts);
+$titles = array_column($posts, 'title'); // title is a PUBLIC member var of Post class, title can also be a key of the associative array $posts (pull a value from each item in a collection)
+array_column($posts, 'title', 'key'); // same but create associative array with 'key' member as key
+
+Homework:
+class Task - description, completed - filter down an array of tasks according to various criteria.
