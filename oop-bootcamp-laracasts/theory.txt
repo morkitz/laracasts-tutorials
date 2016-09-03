@@ -32,3 +32,14 @@ Run this command whenever you update composer.json file.
 6) Pull the autoloader into the project (vendor/autoload.php):
 require 'vendor/autoload.php'
 Do that somewhere in one place which you will include everywhere (like index.php).
+
+Var number of function arguments:
+
+function add(...$nums) { // $nums is array here
+	return array_sum($nums);
+}
+
+the old way:
+function add() {
+	return array_sum(func_get_args());
+}
