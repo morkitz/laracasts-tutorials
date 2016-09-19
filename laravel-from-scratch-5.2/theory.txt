@@ -1,0 +1,2 @@
+Generate a new controller:
+php artisan make:controller <ControllerName>

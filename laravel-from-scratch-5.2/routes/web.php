@@ -11,13 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    $people = ['Marko', 'Flafica', 'Macan'];
-    return view('welcome', compact("people"));
-    //return view('welcome', ['people' => $people]);
-    //return view('welcome')->with('people', $people);
-});
+// Route::get('/', function () {
+//     $people = ['Marko', 'Flafica', 'Macan'];
+//     return view('welcome', compact("people"));
+//     //return view('welcome', ['people' => $people]);
+//     //return view('welcome')->with('people', $people);
+// });
+Route::get('/', 'PagesController@home');
 
-Route::get('about', function () {
-    return view('pages.about');
-});
+// Route::get('about', function () {
+//     return view('pages.about');
+// });
+Route::get('about', 'PagesController@about');
