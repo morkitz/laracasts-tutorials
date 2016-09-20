@@ -1,2 +1,9 @@
 Generate a new controller:
 php artisan make:controller <ControllerName>
+
+For "gulp" to work, you need to install node and npm dependencies-->
+Install node and npm dependencies as specified by package.json file:
+npm install
+
+Compile SASS into CSS (and other things in the workflow): run --> $ gulp
+  - for production run --> $ gulp --production
