@@ -7,3 +7,20 @@ npm install
 
 Compile SASS into CSS (and other things in the workflow): run --> $ gulp
   - for production run --> $ gulp --production
+
+
+Make a new migration:
+php artisan make:migration <migration_name> [--create=new_table_name]
+
+Run migrations:
+php artisan migrate
+- rollback: php artisan rollback
+
+Get the php shell to tinker with in the Laravel app context:
+php artisan tinker
+
+Laravel DB query builder:
+Check Laravel documentation for DB
+
+Create eloquent model:
+php artisan make:model <model_name(e.g. Card)>
