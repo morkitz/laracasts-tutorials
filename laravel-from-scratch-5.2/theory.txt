@@ -24,3 +24,31 @@ Check Laravel documentation for DB
 
 Create eloquent model:
 php artisan make:model <model_name(e.g. Card)>
+
+Eloquent queries --> Card has many notes:
+App\Note::all();
+$card = App\Card::first();
+$card->notes->first();   // here fetch a collection of all notes associated with the cards and then select the first one
+$card->notes()->first(); // here fetch only first note of the card
+
+Log all DB queries:
+DB::listen(function($query) { var_dump($query->sql); });
+
+Clear cache for fetched data:
+$card->fresh();
+
+Fetch card with which note is associated with:
+$note->card;
+
+Create new note for the card:
+$note = new App\Note;
+$note->body = 'Here is another note';
+$card = App\Card::first();
+$card->notes()->save($note);
+
+or
+
+$card->notes()->create(['body' => 'Another new note']); // for this you have to enable mass assignment for body using the fillable property
+
+To enable mass assignment for the 'body' column of the Notes table -> In the Note class add:
+protected $fillable = ['body'];
