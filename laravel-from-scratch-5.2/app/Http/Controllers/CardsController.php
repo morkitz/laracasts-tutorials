@@ -20,6 +20,9 @@ class CardsController extends Controller
    {
       //$card = Card::find($id);
       //return $card;
+
+      // Eager load the card - notes - user relationship
+      $card->load('notes.user');
       return view('cards.show', compact('card'));
    }
 }
