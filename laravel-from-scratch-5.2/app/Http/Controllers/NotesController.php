@@ -27,8 +27,12 @@ class NotesController extends Controller
       //    new Note($request->all())
       // );
 
+      $this->validate($request, [
+            'body' => 'required|min:5'
+         ]);
       $card->addNote(
-         new Note(['body' => $request->body])
+         new Note(['body' => $request->body]),
+         1
       );
 
       return back();

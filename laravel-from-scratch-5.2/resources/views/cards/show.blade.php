@@ -17,13 +17,22 @@
          <hr>
          <form method="post" action="/cards/{{ $card->id }}/notes">
             <div class="form-group">
-               <textarea name="body" class="form-control"></textarea>
+               <textarea name="body" class="form-control">{{ old('body') }}</textarea>
             </div>
             <!-- The following hidden input field is to prevent the CSRF -->
             <!--<input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
             {{ csrf_field() }}
             <button type="submit" class="btn btn-primary">Add Note</button>
          </form>
+
+         <br>
+         @if (count($errors) > 0)
+            <ul class="list-group">
+               @foreach($errors->all() as $error)
+                  <li>{{ $error }}</li>
+               @endforeach
+            </ul>
+         @endif
       </div>
    </div>
 @stop
