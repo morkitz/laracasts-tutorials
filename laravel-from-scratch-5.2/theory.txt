@@ -52,3 +52,9 @@ $card->notes()->create(['body' => 'Another new note']); // for this you have to 
 
 To enable mass assignment for the 'body' column of the Notes table -> In the Note class add:
 protected $fillable = ['body'];
+
+To bring the site into maintenance mode:
+$ php artisan down
+Bring it back:
+$ php artisan up
+
