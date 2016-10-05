@@ -19,6 +19,11 @@
 // });
 Route::get('/', 'PagesController@home');
 
+Route::get('/flash', function() {
+   flash("This is the flashed message", "status");
+   return redirect('/');
+});
+
 // Route::get('about', function () {
 //     return view('pages.about');
 // });
