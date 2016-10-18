@@ -1,0 +1,36 @@
+---
+ip: "192.168.10.11"
+memory: 2048
+cpus: 1
+hostname: laravel
+name: laravel
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: "/home/morkitz/workspace/laracasts-tutorials/laravel"
+      to: "/home/vagrant/laravel"
+
+sites:
+    - map: quickstart.app
+      to: "/home/vagrant/laravel/quickstart/public"
+
+databases:
+    - homestead
+
+# blackfire:
+#     - id: foo
+#       token: bar
+#       client-id: foo
+#       client-token: bar
+
+# ports:
+#     - send: 50000
+#       to: 5000
+#     - send: 7777
+#       to: 777
+#       protocol: udp

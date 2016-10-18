@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/laravel":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/laravel","hostpath":"/home/morkitz/workspace/laracasts-tutorials/laravel","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/morkitz/workspace/laracasts-tutorials/laravel","disabled":false,"__vagrantfile":true}}}
