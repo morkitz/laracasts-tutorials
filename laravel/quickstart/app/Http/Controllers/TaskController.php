@@ -15,6 +15,21 @@ class TaskController extends Controller
 
     public function index(Request $request)
     {
-        return view(tasks.index);
+        $tasks = $request->user()->tasks()->get();
+
+        return view('tasks.index', compact('tasks'));
+    }
+
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|max:255'
+        ]);
+
+        $request->user()->tasks()->create([
+            'name' => $request->name
+        ]);
+
+        return redirect('/tasks');
     }
 }
